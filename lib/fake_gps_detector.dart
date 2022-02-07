@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 class FakeGpsDetector {
   static const MethodChannel _channel = const MethodChannel('fake_gps_detector');
 
-  static Future<bool> get isFakeGps async {
+  static Future<bool?> get isFakeGps async {
     try{
       return await _channel.invokeMethod('isMock');
     }catch(err){
@@ -14,7 +14,7 @@ class FakeGpsDetector {
     }
   }
 
-  static Future<bool> get isEmulator async {
+  static Future<bool?> get isEmulator async {
     try{
       return await _channel.invokeMethod('isEmulator');
     }catch(err){
